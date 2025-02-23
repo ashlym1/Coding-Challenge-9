@@ -66,7 +66,7 @@
         }
             }
     // Test Cases : 
-    const company = new Company("TechCorp");
+    const company = new company("TechCorp");
     company.addEmployee(emp1);
     company.addEmployee(mgr1);
     company.listEmployees();
