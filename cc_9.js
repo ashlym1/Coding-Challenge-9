@@ -73,3 +73,17 @@ company.listEmployees();
 // Expected output:
 // "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
 // "Manager: John Smith, ID: 201, Department: IT, Salary: $8000, Team Size: 5"
+
+// Task 4- Implementing a payroll System 
+  //Adding payroll calculating to company
+   company.prototype.calculateTotalPayroll=function() {
+    return this.emploees.reduce((total,emp)=> { 
+        let annualSalary = emp.calculateAnnualSalaryz();
+        if (emp instanceof Manger) {
+            annualSalary+= emp.calculateAnnualBonus () ; //Including bonnus for managers
+        }
+    return total + annualSalary ; 
+    },0);
+};
+  // Test Case: 
+  console.log(company.calculateTotalPayroll()); // Expected output: 165600 (assuming emp1 and mgr1 salaries) 
