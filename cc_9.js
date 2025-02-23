@@ -1,15 +1,15 @@
 // Task 1 Creating an Employee Class 
  // Creating a HR system with emplyee class 
   class Employee { 
-      constructor (name,id, department,salary) {
+      constructor(name,id, department,salary) {
         this.name= name;  /// Employee's name 
-        this.id= id; // Employes Id number
+        this.id= id; // Employee's Id number
         this.department= department// Department the employee belongs 
         this.salary= salary
         }
     // Method to get employee details in a string format :
         getDetails () { 
-            return `Emplyee:${this.name}, ID: ${this.ID},Department: ${this.department}, Salary:$${this.salary}`;
+            return `Employee:${this.name}, ID: ${this.id},Department: ${this.department}, Salary:$${this.salary}`;
         }
         // Method to calculate the employee's annual salary  : 
         calculateAnnualSalary() {
@@ -21,10 +21,10 @@
     console.log(emp1.getDetails()); 
     // Expected output: "Employee: Alice Johnson, ID: 101, Department: Sales, Salary: $5000"
     
-    console.log(emp1.calculateAnnualSalary());    // anual salary 
+    console.log(emp1.calculateAnnualSalary());    // annual salary 
     // Expected output: 60000 git push
     
-    // Task 2- Created Manager Class with inhereitance 
+    // Task 2- Created Manager Class with Inheritance 
 
       // Class manager inherits from employee : 
         class Manager extends Employee {
@@ -51,7 +51,7 @@
     // Expected output: 9600 
 
     // Task 3- Creating a Company class 
-    class comapny { 
+    class company { 
         constructor (name) { 
             this.name=name;// the companys name 
             this.employees= [] ; // Array to store the employee objects 
@@ -76,11 +76,11 @@ company.listEmployees();
 
 // Task 4- Implementing a payroll System 
   //Adding payroll calculating to company
-   company.prototype.calculateTotalPayroll=function() {
-    return this.emploees.reduce((total,emp)=> { 
-        let annualSalary = emp.calculateAnnualSalaryz();
-        if (emp instanceof Manger) {
-            annualSalary+= emp.calculateAnnualBonus () ; //Including bonnus for managers
+   Company.prototype.calculateTotalPayroll=function() {
+    return this.emplyees.reduce((total,emp)=> { 
+        let annualSalary = emp.calculateAnnualSalary();
+        if (emp instanceof Manager) {
+            annualSalary+= emp.calculateBonus() ; //Including bonus for managers
         }
     return total + annualSalary ; 
     },0);
@@ -96,11 +96,11 @@ company.listEmployees();
         const promotedManager= new Manager ( 
             employee.name,
             employee.id,
-            employee.deparment,
+            employee.departmenent,
             employee.salary,
             teamSize
         );
-        this.employees[index] = promotedManager; // Remplacing employee with manager 
+        this.employees[index] = promotedManager; // Replacing employee with manager 
     } ;
   };
   // Test Case : 
