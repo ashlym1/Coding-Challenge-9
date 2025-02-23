@@ -51,7 +51,7 @@
     // Expected output: 9600 
 
     // Task 3- Creating a Company class 
-    class company { 
+    class Company { 
         constructor (name) { 
             this.name=name;// the companys name 
             this.employees= [] ; // Array to store the employee objects 
@@ -66,7 +66,7 @@
         }
             }
     // Test Cases : 
-    const company = new company("TechCorp");
+    const company = new Company ("TechCorp");
     company.addEmployee(emp1);
     company.addEmployee(mgr1);
     company.listEmployees();
@@ -80,7 +80,7 @@
 // Task 4- Implementing a payroll System 
   //Adding payroll calculating to company
    Company.prototype.calculateTotalPayroll=function() {
-    return this.emplyees.reduce((total,emp)=> { 
+    return this.employees.reduce((total,emp)=> { 
         let annualSalary = emp.calculateAnnualSalary();
         if (emp instanceof Manager) {
             annualSalary+= emp.calculateBonus() ; //Including bonus for managers
@@ -99,7 +99,7 @@
         const promotedManager= new Manager ( 
             employee.name,
             employee.id,
-            employee.departmenent,
+            employee.department,
             employee.salary,
             teamSize
         );
